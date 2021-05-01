@@ -631,44 +631,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3210526, y: 1.6}
   m_EdgeRadius: 0
---- !u!1 &443087670 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4431414379313203922, guid: 3f60551be8ec56543829c00b8301f99b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1081941399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &443087671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4431414379313203923, guid: 3f60551be8ec56543829c00b8301f99b,
     type: 3}
   m_PrefabInstance: {fileID: 1081941399}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &443087673
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443087670}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4.3}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
-    newSize: {x: 25.6, y: 14.4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 2}
-  m_EdgeRadius: 0
 --- !u!1 &532576427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
@@ -927,10 +895,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4431414378337451170, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414378566978385, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414378756052300, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414379036167773, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4431414379313203922, guid: 3f60551be8ec56543829c00b8301f99b,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414379632129311, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4431414380145585825, guid: 3f60551be8ec56543829c00b8301f99b,
         type: 3}
@@ -992,8 +985,80 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4431414380160866724, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414380339085320, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431414380389424226, guid: 3f60551be8ec56543829c00b8301f99b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f60551be8ec56543829c00b8301f99b, type: 3}
+--- !u!1 &1215457398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1215457399}
+  - component: {fileID: 1215457400}
+  m_Layer: 8
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1215457399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215457398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 443087671}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1215457400
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215457398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -4.3}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &1458499177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1072,7 @@ GameObject:
   - component: {fileID: 1458499180}
   - component: {fileID: 1458499179}
   - component: {fileID: 1458499182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1317,6 +1382,13 @@ MonoBehaviour:
   Parent: {fileID: 0}
   RigidBody: {fileID: 1854034025}
   Collider: {fileID: 1854034028}
+  impactField: 4
+  force: 150
+  ImToHit:
+    serializedVersion: 2
+    m_Bits: 256
+  explosionPrefab: {fileID: 6360518654984142915, guid: 5ec7b8c41fa584c488176e8933282a89,
+    type: 3}
   _boostForce: 100
   _hasBoost: 0
 --- !u!4 &1921106251 stripped
@@ -1413,6 +1485,13 @@ MonoBehaviour:
   Parent: {fileID: 0}
   RigidBody: {fileID: 1958296400}
   Collider: {fileID: 1958296399}
+  impactField: 3
+  force: 150
+  ImToHit:
+    serializedVersion: 2
+    m_Bits: 256
+  explosionPrefab: {fileID: 6360518654984142915, guid: 5ec7b8c41fa584c488176e8933282a89,
+    type: 3}
 --- !u!58 &1958296399
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1774,3 +1853,10 @@ MonoBehaviour:
   Parent: {fileID: 0}
   RigidBody: {fileID: 2127173031}
   Collider: {fileID: 2127173030}
+  impactField: 3
+  force: 150
+  ImToHit:
+    serializedVersion: 2
+    m_Bits: 256
+  explosionPrefab: {fileID: 6360518654984142915, guid: 5ec7b8c41fa584c488176e8933282a89,
+    type: 3}

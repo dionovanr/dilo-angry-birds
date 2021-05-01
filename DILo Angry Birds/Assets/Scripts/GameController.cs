@@ -10,8 +10,6 @@ public class GameController : MonoBehaviour
     public BoxCollider2D TapCollider;
 
     private Bird _shotBird;
-
-
     private bool _isGameEnded = false;
 
     private void Start()

@@ -16,6 +16,11 @@ public class Bird : MonoBehaviour
     public UnityAction OnBirdDestroyed = delegate { };
     public UnityAction<Bird> OnBirdShot = delegate { };
 
+    public float impactField;
+    public float force;
+    public LayerMask ImToHit;
+    public GameObject explosionPrefab;
+
     public BirdState State
     {
         get
@@ -47,6 +52,8 @@ public class Bird : MonoBehaviour
             _flagDestroy = true;
             StartCoroutine(DestroyAfter(2));
         }
+
+   
     }
 
     private IEnumerator DestroyAfter(float second)
@@ -78,10 +85,31 @@ public class Bird : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _state = BirdState.HitSomething;
+        Explosion();
     }
 
     public virtual void OnTap()
     {
         //Do nothing
     }
+
+    void Explosion()
+    {
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, impactField, ImToHit);
+
+        foreach (Collider2D obj in objects)
+        {
+            Vector2 dir = obj.transform.position - transform.position;
+
+            obj.GetComponent<Rigidbody2D>().AddForce(dir * force);
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
+    //private void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawSphere(transform.position, impactField);
+    //}
 }

@@ -20,6 +20,7 @@ public class Bird : MonoBehaviour
     public float force;
     public LayerMask ImToHit;
     public GameObject explosionPrefab;
+    
 
     private Shake shake;
     

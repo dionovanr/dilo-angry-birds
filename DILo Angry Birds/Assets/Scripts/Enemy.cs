@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public float Health = 50f;
     public UnityAction<GameObject> OnEnemyDestroyed = delegate { };
     private bool _isHit = false;
+    //private bool _gameEnded = false;
 
     private void OnDestroy()
     {
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
         {
             OnEnemyDestroyed(gameObject);
         }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,6 +39,7 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        
     }
 
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -9,8 +10,13 @@ public class GameController : MonoBehaviour
     public List<Enemy> Enemies;
     public BoxCollider2D TapCollider;
 
+    public GameObject GameOver;
+    public GameObject GameWin;
+
     private Bird _shotBird;
     private bool _isGameEnded = false;
+
+   
 
     private void Start()
     {
@@ -30,6 +36,23 @@ public class GameController : MonoBehaviour
         _shotBird = Birds[0];
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Enemies.Count == 0)
+        {
+            //masukin buat input kode disini
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene("Test");
+            }
+        }
+    }
+
     public void ChangeBird()
     {
         TapCollider.enabled = false;
@@ -43,6 +66,13 @@ public class GameController : MonoBehaviour
 
         if (Birds.Count > 0)
             SlingShooter.InstantiateBird(Birds[0]);
+
+        if (Birds.Count == 0)
+        {
+            _isGameEnded = true;
+            GameOver.SetActive(true); 
+        }
+
     }
 
     public void CheckGameEnd(GameObject destroyedEnemy)
@@ -59,7 +89,11 @@ public class GameController : MonoBehaviour
         if (Enemies.Count == 0)
         {
             _isGameEnded = true;
+            //masukin kode buat UI disini
+            GameWin.SetActive(true);
+
         }
+        
     }
 
     public void AssignTrail(Bird bird)

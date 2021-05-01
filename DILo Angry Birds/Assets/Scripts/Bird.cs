@@ -21,6 +21,9 @@ public class Bird : MonoBehaviour
     public LayerMask ImToHit;
     public GameObject explosionPrefab;
 
+    private Shake shake;
+    
+
     public BirdState State
     {
         get
@@ -38,6 +41,9 @@ public class Bird : MonoBehaviour
         RigidBody.bodyType = RigidbodyType2D.Kinematic;
         Collider.enabled = false;
         _state = BirdState.Idle;
+
+        
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
     }
 
     private void FixedUpdate()
@@ -86,6 +92,14 @@ public class Bird : MonoBehaviour
     {
         _state = BirdState.HitSomething;
         Explosion();
+
+        if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Enemy"))
+        {
+            AudioController.Instance.PlaySoundExplosion("Explosion");
+            shake.CamShake();
+        }
+        
+        
     }
 
     public virtual void OnTap()
@@ -107,9 +121,4 @@ public class Bird : MonoBehaviour
         }
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.color = Color.green;
-    //    Gizmos.DrawSphere(transform.position, impactField);
-    //}
 }

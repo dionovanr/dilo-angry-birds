@@ -48,7 +48,15 @@ public class GameController : MonoBehaviour
             //masukin buat input kode disini
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene("Test");
+                SceneManager.LoadScene("Level 2");
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene("Level 1");
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
     }
@@ -69,8 +77,23 @@ public class GameController : MonoBehaviour
 
         if (Birds.Count == 0)
         {
-            _isGameEnded = true;
-            GameOver.SetActive(true); 
+            if (Birds.Count == 0 && Enemies.Count == 0)
+            {
+                _isGameEnded = true;
+                GameWin.SetActive(true);
+            } 
+            else if (Birds.Count > Enemies.Count && Enemies.Count == 0)
+            {
+                _isGameEnded = true;
+                GameWin.SetActive(true);
+            } 
+            else if (Birds.Count == 0 && Birds.Count < Enemies.Count)
+            {
+                _isGameEnded = true;
+                GameOver.SetActive(true);
+            }
+            
+            
         }
 
     }

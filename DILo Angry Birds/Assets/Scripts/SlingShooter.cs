@@ -57,6 +57,8 @@ public class SlingShooter : MonoBehaviour
         }
 
         DisplayTrajectory(distance);
+
+        
     }
 
     void DisplayTrajectory(float distance)

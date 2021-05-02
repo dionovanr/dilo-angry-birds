@@ -84,6 +84,7 @@ public class Bird : MonoBehaviour
         OnBirdShot(this);
     }
 
+
     private void OnDestroy()
     {
         if (_state == BirdState.Thrown || _state == BirdState.HitSomething)

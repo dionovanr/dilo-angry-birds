@@ -80,6 +80,7 @@ public class Bird : MonoBehaviour
         Collider.enabled = true;
         RigidBody.bodyType = RigidbodyType2D.Dynamic;
         RigidBody.velocity = velocity * speed * distance;
+        AudioController.Instance.PlaySoundExplosion("Bird Sound");
         OnBirdShot(this);
     }
 

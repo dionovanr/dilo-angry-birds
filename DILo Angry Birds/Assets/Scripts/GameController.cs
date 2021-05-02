@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.Quit();
+                Debug.Log("Quit");
             }
         }
     }
@@ -75,27 +76,11 @@ public class GameController : MonoBehaviour
         if (Birds.Count > 0)
             SlingShooter.InstantiateBird(Birds[0]);
 
-        if (Birds.Count == 0)
+        if (Birds.Count == 0 && Birds.Count < Enemies.Count)
         {
-            if (Birds.Count == 0 && Enemies.Count == 0)
-            {
-                _isGameEnded = true;
-                GameWin.SetActive(true);
-            } 
-            else if (Birds.Count > Enemies.Count && Enemies.Count == 0)
-            {
-                _isGameEnded = true;
-                GameWin.SetActive(true);
-            } 
-            else if (Birds.Count == 0 && Birds.Count < Enemies.Count)
-            {
-                _isGameEnded = true;
-                GameOver.SetActive(true);
-            }
-            
-            
+            _isGameEnded = true;
+            GameOver.SetActive(true);
         }
-
     }
 
     public void CheckGameEnd(GameObject destroyedEnemy)
@@ -112,9 +97,23 @@ public class GameController : MonoBehaviour
         if (Enemies.Count == 0)
         {
             _isGameEnded = true;
-            //masukin kode buat UI disini
             GameWin.SetActive(true);
 
+        }
+
+        if (Birds.Count == 0)
+        {
+            if (Birds.Count == 0 && Enemies.Count == 0)
+            {
+                _isGameEnded = true;
+                GameWin.SetActive(true);
+            } 
+            else if (Birds.Count > Enemies.Count && Enemies.Count == 0)
+            {
+                _isGameEnded = true;
+                GameWin.SetActive(true);
+            } 
+            
         }
         
     }
